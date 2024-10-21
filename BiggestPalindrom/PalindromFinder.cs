@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace BiggestPalindrom
 {
-    public class PalindromFinder
+    public class PalindromeFinder
 
     {
         private string str;
+        private string longest;
+        private int size;
         private string token = "123456789";
 
-        public PalindromFinder(string str)
+        public PalindromeFinder(string str)
         {
             this.str = str;
+            this.longest = "";
 
         }
-        public bool IsPalindrom(string str)
+        public bool IsPalindrome(string str)
 
         {
             int begin = 0;
@@ -36,23 +39,23 @@ namespace BiggestPalindrom
         public string Verify()
 
         {
-            int size = 0;
-            string biggest = "";
+            
+   
             for (int begin = 0; begin < this.str.Length; begin++)
             {
                 for (int end = begin; end != this.str.Length; end++)
 
                 {
-                    Range substring = begin..end;
+                    
 
-                    if ((!IsPalindrom(str[substring]) || (str[substring].Length < 3)))
+                    if ((!IsPalindrome(str[begin..end]) || (str[begin..end].Length < 2)))
                     {
                         continue;
                     }
-                    if (str[substring].Length > size)
+                    if (str[begin..end].Length > size)
                     {
-                        size = str[substring].Length;
-                        biggest = str[substring];
+                        this.size = str[begin..end].Length;
+                        this.longest = str[begin..end];
                     }
 
 
@@ -60,11 +63,9 @@ namespace BiggestPalindrom
                 }
 
             }
-            if(size== 0)
-            {
-                return TokenGenerator("none");
-            }
-            return TokenGenerator(biggest);
+            
+            
+                return this.size ==0? TokenGenerator("none") : TokenGenerator(this.longest);
         }
         private string TokenGenerator(string str)
         { var tokenizedString = new StringBuilder();
@@ -80,8 +81,8 @@ namespace BiggestPalindrom
             
             if (tokenSize - tokenIndex > 0)
             {
-                Range range = tokenIndex..tokenSize;
-                tokenizedString.Append(this.token[range]);
+                
+                tokenizedString.Append(this.token[tokenIndex..tokenSize]);
             }
 
             return tokenizedString.ToString();
