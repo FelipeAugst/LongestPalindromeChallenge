@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace BiggestPalindrom
+namespace BiggestPalindrome
 {
     public class PalindromeFinder
 

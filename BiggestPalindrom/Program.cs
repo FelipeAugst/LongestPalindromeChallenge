@@ -1,4 +1,4 @@
-﻿namespace BiggestPalindrom
+﻿namespace BiggestPalindrome
 
 {
     
@@ -7,9 +7,9 @@
     {
         static void Main(string[] args)
         {
-            PalindromFinder finder = new PalindromFinder("asovodfksfdsracecarsçf~raod");
-            PalindromFinder finder2 = new PalindromFinder("asovodfksfararadsracefdcarsçf~raod");
-            PalindromFinder finder3 = new PalindromFinder("asodvodfksfardsardsadsracefdcarsçf~raod");
+            PalindromeFinder finder = new PalindromeFinder("asovodfksfdsracecarsçf~raod");
+            PalindromeFinder finder2 = new PalindromeFinder("asovodfksfararadsracefdcarsçf~raod");
+            PalindromeFinder finder3 = new PalindromeFinder("asodvodfksfardsardsadsracefdcarsçf~raod");
             Console.WriteLine(finder.Verify());
             Console.WriteLine(finder2.Verify());
             Console.WriteLine(finder3.Verify());
